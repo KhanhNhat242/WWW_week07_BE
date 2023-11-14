@@ -8,11 +8,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "product")
-@NamedQueries(value = {
-        @NamedQuery(name = "Product.findAll", query = "select p from Product p where p.status = ?1"),
-        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.product_id = ?1")
-        //,...1
-})
+//@NamedQueries(value = {
+//        @NamedQuery(name = "Product.findAll", query = "select p from Product p where p.status = ?1"),
+//        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.product_id = ?1")
+//        //,...1
+//})
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,13 +32,13 @@ public class Product {
     @Column(name = "status")
     private ProductStatus status;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<ProductImage> productImageList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<OrderDetail> orderDetails = new ArrayList<>();
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<ProductPrice> productPrices = new ArrayList<>();
+//    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+//    private List<ProductImage> productImageList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+//    private List<OrderDetail> orderDetails = new ArrayList<>();
+//    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+//    private List<ProductPrice> productPrices = new ArrayList<>();
 
     public Product() {
     }
@@ -99,29 +99,29 @@ public class Product {
         this.status = status;
     }
 
-    public List<ProductImage> getProductImageList() {
-        return productImageList;
-    }
+//    public List<ProductImage> getProductImageList() {
+//        return productImageList;
+//    }
 
-    public void setProductImageList(List<ProductImage> productImageList) {
-        this.productImageList = productImageList;
-    }
-
-    public List<OrderDetail> getOrderDetails() {
-        return orderDetails;
-    }
-
-    public void setOrderDetails(List<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
-
-    public List<ProductPrice> getProductPrices() {
-        return productPrices;
-    }
-
-    public void setProductPrices(List<ProductPrice> productPrices) {
-        this.productPrices = productPrices;
-    }
+//    public void setProductImageList(List<ProductImage> productImageList) {
+//        this.productImageList = productImageList;
+//    }
+//
+//    public List<OrderDetail> getOrderDetails() {
+//        return orderDetails;
+//    }
+//
+//    public void setOrderDetails(List<OrderDetail> orderDetails) {
+//        this.orderDetails = orderDetails;
+//    }
+//
+//    public List<ProductPrice> getProductPrices() {
+//        return productPrices;
+//    }
+//
+//    public void setProductPrices(List<ProductPrice> productPrices) {
+//        this.productPrices = productPrices;
+//    }
 
     @Override
     public String toString() {

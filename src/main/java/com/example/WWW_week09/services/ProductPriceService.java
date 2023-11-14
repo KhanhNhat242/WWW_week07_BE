@@ -5,6 +5,8 @@ import com.example.WWW_week09.repositories.ProductPriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductPriceService {
     @Autowired
@@ -12,5 +14,8 @@ public class ProductPriceService {
 
     public void createOrUpdate(ProductPrice pr){
         productPriceRepository.save(pr);
+    }
+    public List<ProductPrice> findAll() {
+        return productPriceRepository.findAll();
     }
 }

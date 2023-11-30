@@ -18,4 +18,7 @@ public class ProductPriceService {
     public List<ProductPrice> findAll() {
         return productPriceRepository.findAll();
     }
+    public ProductPrice findOne(long id){
+        return productPriceRepository.findById(id).get();
+    }
 }

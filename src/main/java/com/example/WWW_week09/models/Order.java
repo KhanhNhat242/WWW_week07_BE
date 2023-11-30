@@ -24,14 +24,21 @@ public class Order {
     @JoinColumn(name = "cust_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderDetail> orderDetails;
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+//    private List<OrderDetail> orderDetails;
 
     public Order() {
     }
 
-    public Order(long order_id, LocalDateTime orderDate, Employee employee, Customer customer) {
-        this.order_id = order_id;
+//    public Order(long order_id, LocalDateTime orderDate, Employee employee, Customer customer) {
+//        this.order_id = order_id;
+//        this.orderDate = orderDate;
+//        this.employee = employee;
+//        this.customer = customer;
+//    }
+
+
+    public Order(LocalDateTime orderDate, Employee employee, Customer customer) {
         this.orderDate = orderDate;
         this.employee = employee;
         this.customer = customer;
@@ -69,13 +76,13 @@ public class Order {
         this.customer = customer;
     }
 
-    public List<OrderDetail> getOrderDetails() {
-        return orderDetails;
-    }
-
-    public void setOrderDetails(List<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
+//    public List<OrderDetail> getOrderDetails() {
+//        return orderDetails;
+//    }
+//
+//    public void setOrderDetails(List<OrderDetail> orderDetails) {
+//        this.orderDetails = orderDetails;
+//    }
 
     @Override
     public String toString() {
@@ -84,7 +91,6 @@ public class Order {
                 ", orderDate=" + orderDate +
                 ", employee=" + employee +
                 ", customer=" + customer +
-                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

@@ -3,9 +3,7 @@ package com.example.WWW_week09.controllers;
 import com.example.WWW_week09.models.ProductPrice;
 import com.example.WWW_week09.services.ProductPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
